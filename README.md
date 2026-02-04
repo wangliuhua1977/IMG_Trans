@@ -22,8 +22,9 @@ java -jar .\target\IMG_Trans-1.0.0.jar
 
 ## 依赖说明
 - **FlatLaf**：提供现代化 Swing 主题，提升可读性与观感。
-- **TwelveMonkeys ImageIO**：增强 ImageIO 对 TIFF 等格式的读取能力，保证兼容性。
-- **Luciad WebP ImageIO**：为 ImageIO 增加 WebP 读取能力。
+- **TwelveMonkeys ImageIO**：增强 ImageIO 对 TIFF/WebP 等格式的读取能力，保证兼容性。
+- **PNG/GIF**：使用 JDK 自带 ImageIO，无需额外插件。
+- **WebP**：使用 TwelveMonkeys `imageio-webp` 插件；打包为 fat-jar 时需合并 `META-INF/services` 以保证 ImageIO SPI 可发现。
 - **内置 ICO 写入器**：通过 PNG 编码封装多尺寸 ICO，避免额外依赖并保证可移植性。
 
 ## 截图

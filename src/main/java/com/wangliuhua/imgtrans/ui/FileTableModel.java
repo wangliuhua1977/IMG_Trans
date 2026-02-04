@@ -10,7 +10,7 @@ import java.util.List;
 public class FileTableModel extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
 
-    private final List<ImageItem> items = new ArrayList<>();
+    private final transient List<ImageItem> items = new ArrayList<>();
     private final String[] columns = {"文件名", "尺寸", "格式", "大小", "路径"};
 
     public void addItems(List<ImageItem> newItems) {
