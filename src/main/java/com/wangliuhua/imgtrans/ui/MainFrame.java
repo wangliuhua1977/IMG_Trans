@@ -52,7 +52,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MainFrame extends JFrame {
+public final class MainFrame extends JFrame {
     private static final long serialVersionUID = 1L;
 
     private final transient Logger logger = LogUtil.getLogger();
