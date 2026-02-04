@@ -24,7 +24,7 @@ java -jar .\target\IMG_Trans-1.0.0.jar
 - **FlatLaf**：提供现代化 Swing 主题，提升可读性与观感。
 - **TwelveMonkeys ImageIO**：增强 ImageIO 对 TIFF 等格式的读取能力，保证兼容性。
 - **Luciad WebP ImageIO**：为 ImageIO 增加 WebP 读取能力。
-- **image4j**：用于生成内嵌多尺寸位图的 `.ico` 文件。
+- **内置 ICO 写入器**：通过 PNG 编码封装多尺寸 ICO，避免额外依赖并保证可移植性。
 
 ## 截图
 - 截图待补充：主界面包含左侧文件列表、右侧预览区、顶部工具栏、下方尺寸与缩放设置以及日志区。
@@ -36,4 +36,3 @@ java -jar .\target\IMG_Trans-1.0.0.jar
 $base64 = Get-Content .\src\main\resources\sample\sample_base64.txt
 [IO.File]::WriteAllBytes(".\sample.png", [Convert]::FromBase64String($base64))
 ```
-

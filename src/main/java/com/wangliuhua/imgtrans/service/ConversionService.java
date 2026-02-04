@@ -5,9 +5,8 @@ import com.wangliuhua.imgtrans.model.ConversionResult;
 import com.wangliuhua.imgtrans.model.ImageItem;
 import com.wangliuhua.imgtrans.model.OutputFormat;
 import com.wangliuhua.imgtrans.util.FileUtil;
+import com.wangliuhua.imgtrans.util.IcoWriter;
 import com.wangliuhua.imgtrans.util.LogUtil;
-
-import net.sf.image4j.codec.ico.ICOEncoder;
 
 import javax.imageio.ImageIO;
 import java.awt.Color;
@@ -112,7 +111,7 @@ public class ConversionService {
                 }
                 String baseName = FileUtil.getBaseName(source);
                 File outFile = FileUtil.resolveUniqueFile(outputDir, baseName, "ico", config.isOverwrite());
-                ICOEncoder.write(icoImages, outFile);
+                IcoWriter.write(icoImages, outFile);
             }
             result.incrementSuccess();
             logger.info("处理完成: " + source.getName());

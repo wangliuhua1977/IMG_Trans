@@ -372,6 +372,14 @@ public class MainFrame extends JFrame {
             JOptionPane.showMessageDialog(this, "请至少选择一个尺寸", "提示", JOptionPane.WARNING_MESSAGE);
             return null;
         }
+        if (config.getOutputFormat() == OutputFormat.ICO) {
+            for (Integer size : sizes) {
+                if (size > 256) {
+                    JOptionPane.showMessageDialog(this, "ICO 尺寸最大仅支持 256，请移除尺寸: " + size, "尺寸错误", JOptionPane.ERROR_MESSAGE);
+                    return null;
+                }
+            }
+        }
         config.getSizes().addAll(sizes);
 
         if (config.isUnifiedOutput()) {
