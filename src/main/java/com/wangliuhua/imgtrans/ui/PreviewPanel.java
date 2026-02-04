@@ -18,6 +18,8 @@ import java.awt.image.BufferedImage;
 import java.util.Set;
 
 public class PreviewPanel extends JPanel {
+    private static final long serialVersionUID = 1L;
+
     private final JLabel originalLabel = new JLabel("未选择图片", SwingConstants.CENTER);
     private final JPanel thumbPanel = new JPanel();
 

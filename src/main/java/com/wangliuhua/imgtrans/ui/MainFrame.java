@@ -53,7 +53,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MainFrame extends JFrame {
-    private final Logger logger = LogUtil.getLogger();
+    private static final long serialVersionUID = 1L;
+
+    private final transient Logger logger = LogUtil.getLogger();
     private final FileTableModel tableModel = new FileTableModel();
     private final JTable table = new JTable(tableModel);
     private final PreviewPanel previewPanel = new PreviewPanel();
@@ -79,8 +81,8 @@ public class MainFrame extends JFrame {
     private final JButton pickLogDirButton = new JButton("日志目录");
     private final JComboBox<ScaleMode> scaleModeBox = new JComboBox<>(ScaleMode.values());
     private Color backgroundColor = Color.WHITE;
-    private ConversionWorker worker;
-    private ConversionService conversionService;
+    private transient ConversionWorker worker;
+    private transient ConversionService conversionService;
     private File lastOutputDir;
 
     public MainFrame() {

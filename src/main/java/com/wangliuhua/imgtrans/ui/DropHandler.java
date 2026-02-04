@@ -8,7 +8,9 @@ import java.util.List;
 import javax.swing.TransferHandler;
 
 public class DropHandler extends TransferHandler {
-    private final DropListener listener;
+    private static final long serialVersionUID = 1L;
+
+    private final transient DropListener listener;
 
     public DropHandler(DropListener listener) {
         this.listener = listener;
@@ -37,6 +39,9 @@ public class DropHandler extends TransferHandler {
                 }
             }
             if (files.isEmpty()) {
+                return false;
+            }
+            if (listener == null) {
                 return false;
             }
             listener.onFilesDropped(files);
